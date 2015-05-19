@@ -366,10 +366,8 @@ define( [
    // shared global state: identifies the currently visible date picker by its input field
    var currentlyVisiblePicker = null;
 
-   return {
-      createForModule: function( module ) {
-         module.directive( directiveName, directive );
-      }
-   };
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   return ng.module( directiveName + 'Control', [] ).directive( directiveName, directive );
 
 } );
