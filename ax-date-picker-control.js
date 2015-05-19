@@ -9,28 +9,10 @@ define( [
    'laxar_uikit',
    'jquery',
    'moment',
-   'jquery_ui/datepicker',
-   'jquery_ui/i18n/datepicker-de'
+   'jquery-ui/ui/datepicker',
+   'jquery-ui/ui/i18n/datepicker-de'
 ], function( ng, ax, ui, $, moment ) {
    'use strict';
-
-   /**
-    * This DatePicker directive is based on the jQuery-UI DatePicker, but behaves in some ways different than
-    * the original implementation:
-    * * The DatePicker as provided by jQuery-UI has a "Today"-Button which only jumps to the current year and
-    *   month in the displayed calendar. What we want is this behavior plus the selection of today in the
-    *   input and an update of the model. The displayed calendar should remain open.
-    * * At the moment of writing we have three different types of format strings for date formatters and
-    *   parsers: AngularJS', jQuery's and moment's.
-    *   To lower this number and due to the current usage in widget controllers, the datepicker's format
-    *   strings were changed to the format used by moment.js.
-    *
-    * Additional usage note:
-    * The expected view model is an ISO date string (e.g. 2013-12-24) and no Date instance. This is due to the
-    * fact that most dates come from resources where dates are serialized as iso strings.
-    */
-
-   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    var directiveName = 'axDatePicker';
    var directive = [ '$q', '$window', function( $q, $window ) {
