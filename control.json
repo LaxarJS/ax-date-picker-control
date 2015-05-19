@@ -1,0 +1,8 @@
+{
+   "name": "ax-date-picker-control",
+   "description": "The jQueryUI datepicker, packaged for use with ngModel and optionally the LaxarJS ax-input-control.",
+
+   "integration": {
+      "technology": "angular"
+   }
+}

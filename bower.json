@@ -1,0 +1,22 @@
+{
+   "name": "laxarjs.ax-date-picker-control",
+   "version": "1.0.0-pre",
+   "description": "The jQueryUI datepicker, packaged for use with ngModel and optionally the LaxarJS ax-input-control.",
+   "authors": [],
+   "license": "MIT",
+   "main": "ax-date-picker-control.js",
+   "moduleType": "amd",
+   "ignore": [
+      ".*",
+      "Gruntfile.js",
+      "node_modules",
+      "bower_components"
+   ],
+   "dependencies": {
+      "jquery": ">=1.6",
+      "jqueryui": "1.11.x",
+      "laxar": "^1.0.0-alpha.12",
+      "laxar_uikit": "^1.0.0-alpha.6",
+      "moment": "2.9.x"
+   }
+}
