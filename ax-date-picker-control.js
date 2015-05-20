@@ -6,7 +6,7 @@
 define( [
    'angular',
    'laxar',
-   'laxar_uikit',
+   'laxar-uikit',
    'jquery',
    'moment',
    'jquery-ui/ui/datepicker',
@@ -313,7 +313,7 @@ define( [
             if( !( currentTag in $.datepicker.regional ) ) {
                // Fix for IE: Although IE could not load the file, it claims to have done so. We know that IE
                // is a liar, if the language tag is not present in the region map
-               // (https://github.com/LaxarJS/laxar_uikit/issues/46)
+               // (https://github.com/LaxarJS/laxar-uikit/issues/46)
                return languageNotFound();
             }
 
