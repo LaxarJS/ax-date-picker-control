@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#2](https://github.com/LaxarJS/ax-confirm-button-control/issues/2): updated LaxarJS dependency and updated contribution information
+
 
 ## v1.0.0-alpha.1
 
