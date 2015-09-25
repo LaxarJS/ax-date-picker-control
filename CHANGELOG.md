@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v1.0.1
+
 - [#3](https://github.com/LaxarJS/ax-date-picker-control/issues/3): fixed showing default date when date value in input is invalid
 
 
