@@ -10,6 +10,7 @@ In some ways this directive differs from the jQuery UI implementation:
   The displayed calendar should remain open.
 * At the moment of writing we have three different types of format strings for date formatters and parsers: AngularJS', jQuery's and moment's.
   To lower this number and due to the current usage in widget controllers, the date picker's format strings were changed to the format used by moment.js.
+* While *options* may be passed through to the jQuery UI datepicker by attribute-binding to the `axDatePicker` directive (see [usage](#usage)), not all options will be compatible with the Bootstrap styling applied by this directive.
 
 Additional usage note:
 The expected view model is an [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) date string (e.g. `2013-12-24`) and no Date instance.
@@ -20,6 +21,7 @@ This is due to the fact that most dates come from resources where dates are seri
 
 To retrieve a copy of this control you can either clone it directly using git or alternatively install it via Bower.
 For general information on installing, styling and optimizing controls, have a look at the [LaxarJS documentation](https://github.com/LaxarJS/laxar/blob/master/docs/manuals/installing_controls.md).
+
 
 ### Setup Using Bower
 
@@ -50,7 +52,35 @@ packages: [
 ```
 
 Now you may reference the control from the `widget.json` of your widget:
- 
+
 ```json
 "controls": [ "laxar-date-picker-control" ]
+```
+
+
+### Usage
+
+The control provides an AngularJS directive `axDatePicker`, which can be used as follows:
+
+```html
+<input type="text" data-ax-date-picker>
+```
+
+Or, passing [jQuery UI datepicker options](api.jqueryui.com/datepicker/) such as `"defaultDate"` to set the initial date to the next day:
+
+```html
+<input type="text" data-ax-date-picker='{"defaultDate": "+1d"}'>
+```
+
+Note that some jQuery UI options may not work properly, particularly if they conflict with the Bootstrap styling applied by this control.
+
+Or, in combination with the [laxar-input-control](https://github.com/LaxarJS/ax-input-control#axinputcontrol),
+to add validation:
+
+```html
+<input
+   type="text"
+   data-ax-input="date"
+   data-ax-input-required="true"
+   data-ax-input-validation-message="'Please enter your birthday'">
 ```
