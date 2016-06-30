@@ -64,29 +64,9 @@ define( [
          require: [ 'ngModel', '?axInput' ],
          link: function( scope, textField, attrs, controllers ) {
 
-            // Augment the textField DOM.
-            var wrapper = $( '<div class="ax-date-picker input-group"></div>' ).insertBefore( textField );
-            textField.detach().appendTo( wrapper ).addClass( 'form-control' );
-            var button = $( '<button type="button" class="ui-datepicker-trigger btn btn-default">' );
-            button.on( 'click', showDatePickerDialog );
-            textField.on( 'focus', showDatePickerDialog );
-            wrapper.append( button );
-
-            var ngModel = controllers[0];
-            var axInput = controllers[1] || null;
-            var languageTag;
-            var state = {
-               disabled: false,
-               readonly: false
-            };
-
-            watchInputState();
-            updateLocale();
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////
-
             var options = ax.object.options( scope.$eval( attrs[ directiveName ] ), {
                buttonText: '',
+               buttonImage: '',
                changeMonth: true,
                changeYear: true,
                constrainInput: false,
@@ -102,6 +82,29 @@ define( [
                   currentlyVisiblePicker = textField;
                }
             } );
+
+            // Augment the textField DOM.
+            var wrapper = $( '<div class="ax-date-picker input-group"></div>' ).insertBefore( textField );
+            textField.detach().appendTo( wrapper ).addClass( 'form-control' );
+            var button = $( '<button type="button" class="ui-datepicker-trigger btn btn-default">' );
+            button.on( 'click', showDatePickerDialog );
+            wrapper.append( button );
+            if( options.showOn !== 'button' ) {
+               textField.on( 'focus', showDatePickerDialog );
+            }
+
+            var ngModel = controllers[0];
+            var axInput = controllers[1] || null;
+            var languageTag;
+            var state = {
+               disabled: false,
+               readonly: false
+            };
+
+            watchInputState();
+            updateLocale();
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////
 
             if( options.yearRange && !options.minDate && !options.maxDate ) {
                ax.log.warn(
@@ -166,9 +169,13 @@ define( [
                      dialogCreated = true;
                      textField.datepicker( 'show' );
                   }
-                  else {
+                  else if( options.showOn === 'focus' ) {
                      textField.trigger( 'focus' );
                   }
+                  else {
+                     textField.datepicker( 'show' );
+                  }
+
                   dialogBeingShown = false;
                } );
 
@@ -195,6 +202,10 @@ define( [
                      calendar.find( 'a' ).on( 'click', function( event ) {
                         event.preventDefault();
                      } );
+
+                     if( options.showOn !== 'focus' ) {
+                        $( '.ui-datepicker-trigger:not(.btn)', button.parent() ).remove();
+                     }
                   } );
 
                }
