@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#5](https://github.com/LaxarJS/ax-date-picker-control/issues/5): added missing usage docs, explained jQuery UI options
 - [#4](https://github.com/LaxarJS/ax-date-picker-control/issues/4): fixed support for jQuery UI option `showOn` when set to `"button"`
 
 
