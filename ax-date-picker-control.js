@@ -44,7 +44,7 @@ define( [
          $picker.datepicker( 'setDate', new Date() );
 
          // Propagate the change to listeners manually, especially to out ModelController as used below.
-         this._get( this._getInst( $picker[0] ), 'onSelect' )( $picker.val() );
+         this._get( this._getInst( $picker[0] ), 'onClose' )( $picker.val() );
       };
 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
