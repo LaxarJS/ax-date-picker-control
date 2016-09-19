@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#7](https://github.com/LaxarJS/ax-date-picker-control/issues/7): today button: Fixed calling the event listeners
+
 
 ## v1.0.2
 
