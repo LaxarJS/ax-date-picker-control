@@ -9,13 +9,15 @@ define( [
    'laxar-uikit',
    'jquery',
    'moment',
-   'jquery-ui/ui/datepicker',
+   'jquery-ui/ui/widgets/datepicker',
    'jquery-ui/ui/i18n/datepicker-de'
 ], function( ng, ax, ui, $, moment ) {
    'use strict';
 
    var directiveName = 'axDatePicker';
-   var directive = [ '$q', '$window', function( $q, $window ) {
+   var directive = [ '$q', '$window', 'axWidgetServices', function( $q, $window, services ) {
+
+      var i18n = services.axI18n;
 
       var additionalCalendarClassesRules = {
          '.ui-datepicker': 'popover',
@@ -85,7 +87,7 @@ define( [
 
             // Augment the textField DOM.
             var wrapper = $( '<div class="ax-date-picker input-group"></div>' ).insertBefore( textField );
-            textField.detach().appendTo( wrapper ).addClass( 'form-control' );
+            wrapper.append( textField.detach() ).addClass( 'form-control' );
             var button = $( '<button type="button" class="ui-datepicker-trigger btn btn-default">' );
             button.on( 'click', showDatePickerDialog );
             wrapper.append( button );
@@ -120,6 +122,11 @@ define( [
                // If there is an axInput, this will take care of formatting and parsing. Thus we only need to
                // handle it, if there is no axInput controller found on the scope.
 
+
+               ngModel.$formatters.unshift( ui.localized( i18n ).formatter.create( 'date' ) );
+               ngModel.$parsers.push( ui.localized( i18n ).parser.create( 'date' ) );
+
+               /*
                ngModel.$formatters.unshift( function( modelValue ) {
                   var momentFormat = ui.i18n.momentFormatForLanguageTag( languageTag );
                   if( typeof modelValue === 'string' ) {
@@ -141,6 +148,7 @@ define( [
                   }
                   return null;
                } );
+               */
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -216,13 +224,10 @@ define( [
             // Localization
             //////////////////////////////////////////////////////////////////////////////////////////////////
 
-            scope.$watch( 'i18n', function( newValue, oldValue ) {
-               if( newValue === oldValue ) { return; }
-               updateLocale();
-            }, true );
+            i18n.whenLocaleChanged( updateLocale );
 
             function updateLocale() {
-               languageTag = ui.i18n.languageTagFromScope( scope );
+               languageTag = i18n.languageTag();
 
                return loadLanguage( languageTag.split( '_' ) )
                   .then( function( loadedLanguage ) {
@@ -307,6 +312,7 @@ define( [
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
       function loadLanguage( tagParts ) {
+         var context = require.context( 'jquery-ui/ui/i18n', false, /datepicker-.*\.js$/ );
 
          var currentTag = tagParts.join( '-' );
          if( currentTag in $.datepicker.regional ) {
@@ -320,7 +326,10 @@ define( [
          /////////////////////////////////////////////////////////////////////////////////////////////////////
 
          var deferred = $q.defer();
-         require( [ 'jquery_ui/i18n/datepicker-' + currentTag ], function() {
+
+         if( context.resolve( 'datepicker-' + currentTag ) ) {
+            context( 'datepicker-' + currentTag );
+
             if( !( currentTag in $.datepicker.regional ) ) {
                // Fix for IE: Although IE could not load the file, it claims to have done so. We know that IE
                // is a liar, if the language tag is not present in the region map
@@ -329,7 +338,10 @@ define( [
             }
 
             deferred.resolve( currentTag );
-         }, languageNotFound );
+         }
+         else {
+            languageNotFound();
+         }
 
          function languageNotFound() {
             if( tagParts.length > 1 ) {
@@ -337,6 +349,7 @@ define( [
                deferred.resolve( loadLanguage( tagParts ) );
                return;
             }
+
             deferred.reject();
          }
 

@@ -1,10 +1,9 @@
 /.idea
-/dist
 /bower_components
 /node_modules
 /test-results.xml
 /spec-output
 /lcov.info
+yarn.lock
 npm-debug.log
 .sass-cache
-.yarnclean

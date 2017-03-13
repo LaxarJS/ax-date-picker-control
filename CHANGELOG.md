@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#8](https://github.com/LaxarJS/ax-date-picker-control/issues/8): upgraded to LaxarJS v2
+    + **BREAKING CHANGE:** see ticket for details
 - [#7](https://github.com/LaxarJS/ax-date-picker-control/issues/7): today button: Fixed calling the event listeners
 - [#5](https://github.com/LaxarJS/ax-date-picker-control/issues/5): added missing usage docs, explained jQuery UI options
 - [#4](https://github.com/LaxarJS/ax-date-picker-control/issues/4): fixed support for jQuery UI option `showOn` when set to `"button"`

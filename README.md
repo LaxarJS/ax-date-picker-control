@@ -1,4 +1,4 @@
-# AxDatePickerControl
+# laxar-date-picker-control
 
 > Wraps the [jQuery UI datepicker component](https://jqueryui.com/datepicker/) as an AngularJS directive, for LaxarJS widgets.
 
@@ -19,46 +19,15 @@ This is due to the fact that most dates come from resources where dates are seri
 
 ## Installation
 
-To retrieve a copy of this control you can either clone it directly using git or alternatively install it via Bower.
-For general information on installing, styling and optimizing controls, have a look at the [LaxarJS documentation](https://github.com/LaxarJS/laxar/blob/master/docs/manuals/installing_controls.md).
+To use this control you should install it into your LaxarJS v2 project:
 
-
-### Setup Using Bower
-
-Install the control into your LaxarJS application:
-
-```sh
-bower install laxar-date-picker-control
+```console
+npm install laxar-date-picker-control
 ```
 
-Make sure that `moment`, `jquery` and `jquery-ui` can be found by RequireJS.
-For example, assuming that your `baseUrl` is `'bower_components'`, add this to the `paths` section of your `require_config.js`:
+This control only works for LaxarJS widget that are targeting AngularJS v1. It requires jQuery UI.
 
-```js
-jquery: 'jquery/dist/jquery'
-```
-
-Since Moment.js internally loads own assets (for example i18n files) using CommonJS style, we need to set it up as a _package_ in the `require_config.js`:
-
-```js
-packages: [
-   // ...
-   {
-      name: 'moment',
-      location: 'moment',
-      main: 'moment'
-   }
-]
-```
-
-Now you may reference the control from the `widget.json` of your widget:
-
-```json
-"controls": [ "laxar-date-picker-control" ]
-```
-
-
-### Usage
+## Usage
 
 The control provides an AngularJS directive `axDatePicker`, which can be used as follows:
 
