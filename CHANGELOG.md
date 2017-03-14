@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+## v2.0.0-alpha.0
+
 - [#8](https://github.com/LaxarJS/ax-date-picker-control/issues/8): upgraded to LaxarJS v2
     + **BREAKING CHANGE:** see ticket for details
 - [#7](https://github.com/LaxarJS/ax-date-picker-control/issues/7): today button: Fixed calling the event listeners
