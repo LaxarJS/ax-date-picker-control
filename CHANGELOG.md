@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+- [#6](https://github.com/LaxarJS/ax-date-picker-control/issues/6): Fixed processing of language tags
+
+
 ## v2.0.0-alpha.0
 
 - [#8](https://github.com/LaxarJS/ax-date-picker-control/issues/8): upgraded to LaxarJS v2

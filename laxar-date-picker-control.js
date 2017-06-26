@@ -229,7 +229,7 @@ define( [
             function updateLocale() {
                languageTag = i18n.languageTag();
 
-               return loadLanguage( languageTag.split( '_' ) )
+               return loadLanguage( languageTag.split( '-' ).split( '_' ) )
                   .then( function( loadedLanguage ) {
                      return dialogCreated ? updateDialogLanguage( loadedLanguage ) : loadedLanguage;
                   }, function() {
