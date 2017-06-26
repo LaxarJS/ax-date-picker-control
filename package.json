@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LaxarJS/ax-date-picker-control.git"
+    "url": "https://github.com/LaxarJS/laxar-date-picker-control.git"
   },
   "scripts": {
     "prepublish": "webpack -p",
@@ -19,7 +19,7 @@
   "dependencies": {
     "jquery": ">=2.2.4",
     "jquery-ui": "^1.12.1",
-    "laxar-uikit": "^2.0.0",
+    "laxar-uikit": "^2.0.0-rc.1",
     "moment": "^2.17.1"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "eslint": "^3.17.1",
     "eslint-config-laxarjs": "^0.3.0",
     "karma": "^1.5.0",
-    "laxar": "^2.0.0",
+    "laxar": "^2.0.0-rc.3",
     "laxar-infrastructure": "0.1.0-alpha.4",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
@@ -42,7 +42,7 @@
     "laxar": "^2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/LaxarJS/ax-date-picker-control/issues",
+    "url": "https://github.com/LaxarJS/laxar-date-picker-control/issues",
     "email": "info@laxarjs.org"
   }
 }

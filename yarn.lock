@@ -2559,19 +2559,20 @@ laxar-infrastructure@0.1.0-alpha.4:
     source-map-support "^0.4.10"
     webpack-jasmine-html-runner-plugin "^0.7.0"
 
-laxar-uikit@^2.0.0:
-  version "2.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/laxar-uikit/-/laxar-uikit-2.0.0-alpha.5.tgz#c5824f7fe8a7b6b3c696ba84fa061fe88100db39"
+laxar-uikit@^2.0.0-rc.1:
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/laxar-uikit/-/laxar-uikit-2.0.0-rc.1.tgz#0f6e5104d0c2ad79378685fb95310d9695071292"
   dependencies:
     bootstrap-sass "~3.3.7"
     font-awesome "~4.7.0"
     moment "^2.17.1"
+    pkg-dir "^1.0.0"
 
-laxar@^2.0.0:
-  version "2.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/laxar/-/laxar-2.0.0-alpha.18.tgz#935375a9563ea861d44422b0efd5d97da537cffa"
+laxar@^2.0.0-rc.3:
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/laxar/-/laxar-2.0.0-rc.3.tgz#39d3388b4cfd0a432a11f58c858071b150f4a688"
   dependencies:
-    page "~1.7.1"
+    navigo "4.3.6"
 
 lazy-cache@^1.0.3:
   version "1.0.4"
@@ -2776,6 +2777,10 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
+navigo@4.3.6:
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/navigo/-/navigo-4.3.6.tgz#064f3167933e03b1b42a225d19f21606c24ab5e3"
+
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
@@ -2964,12 +2969,6 @@ os-tmpdir@^1.0.1, os-tmpdir@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
-page@~1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/page/-/page-1.7.1.tgz#3886c147b895487783759b37e800a11213bc38ed"
-  dependencies:
-    path-to-regexp "~1.2.1"
-
 pako@~0.2.0:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
@@ -3046,12 +3045,6 @@ path-parse@^1.0.5:
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
-
-path-to-regexp@~1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.2.1.tgz#b33705c140234d873c8721c7b9fd8b541ed3aff9"
-  dependencies:
-    isarray "0.0.1"
 
 path-type@^1.0.0:
   version "1.1.0"
