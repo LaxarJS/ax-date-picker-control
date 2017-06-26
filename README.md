@@ -2,7 +2,7 @@
 
 > Wraps the [jQuery UI datepicker component](https://jqueryui.com/datepicker/) as an AngularJS directive, for LaxarJS widgets.
 
-This control can be used directly with [ngModel](https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngModel) or alternatively in combination with the [https://github.com/LaxarJS/ax-input-control](ax-input-control).
+This control can be used directly with [ngModel](https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngModel) or alternatively in combination with the [https://github.com/LaxarJS/laxar-input-control](laxar-input-control).
 
 In some ways this directive differs from the jQuery UI implementation:
 * The DatePicker as provided by jQuery UI has a "Today"-Button which only jumps to the current year and month in the displayed calendar.
@@ -35,7 +35,7 @@ The control provides an AngularJS directive `axDatePicker`, which can be used as
 <input type="text" data-ax-date-picker>
 ```
 
-Or, passing [jQuery UI datepicker options](api.jqueryui.com/datepicker/) such as `"defaultDate"` to set the initial date to the next day:
+Or, passing [jQuery UI datepicker options](https://api.jqueryui.com/datepicker/) such as `"defaultDate"` to set the initial date to the next day:
 
 ```html
 <input type="text" data-ax-date-picker='{"defaultDate": "+1d"}'>

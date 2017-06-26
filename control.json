@@ -1,5 +1,5 @@
 {
-   "name": "ax-date-picker-control",
+   "name": "laxar-date-picker-control",
 
    "integration": {
       "technology": "angular"
