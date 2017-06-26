@@ -224,7 +224,7 @@ define( [
             function updateLocale() {
                languageTag = ui.i18n.languageTagFromScope( scope );
 
-               return loadLanguage( languageTag.split( '_' ) )
+               return loadLanguage( languageTag.split( '-' ).split( '_' ) )
                   .then( function( loadedLanguage ) {
                      return dialogCreated ? updateDialogLanguage( loadedLanguage ) : loadedLanguage;
                   }, function() {
