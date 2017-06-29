@@ -4,19 +4,23 @@
  * http://laxarjs.org/license
  */
 /* eslint-env node */
+const path = require( 'path' );
 const IgnorePlugin = require( 'webpack' ).IgnorePlugin;
-
 const pkg = require( './package.json' );
 
 const webpack = require( 'laxar-infrastructure' ).webpack( {
    context: __dirname,
-   rules: [
-      {
-         test: /\.js$/,
-         exclude: 'node_modules',
-         loader: 'babel-loader'
-      }
-   ],
+   module: {
+      rules: [
+         {
+            test: /\.js$/,
+            exclude: [
+               path.resolve( __dirname, 'node_modules' )
+            ],
+            loader: 'babel-loader'
+         }
+      ]
+   },
    plugins: [
       // amazingly, webpack excludes the locales from the bundle but still can
       // resolve them later when bundling the bundle

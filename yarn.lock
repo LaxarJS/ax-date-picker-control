@@ -1505,6 +1505,10 @@ eslint-config-laxarjs@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/eslint-config-laxarjs/-/eslint-config-laxarjs-0.3.0.tgz#322dc060ade649f740062b6d5e69c523bb3b6e55"
 
+eslint-config-laxarjs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-laxarjs/-/eslint-config-laxarjs-2.0.0.tgz#720aa9c47ee4c18fac3d5f359c3fb9c15233c38f"
+
 eslint@^3.0.1, eslint@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.17.1.tgz#b80ae12d9c406d858406fccda627afce33ea10ea"
@@ -2538,12 +2542,12 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-laxar-infrastructure@0.1.0-alpha.4:
-  version "0.1.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/laxar-infrastructure/-/laxar-infrastructure-0.1.0-alpha.4.tgz#0a4c55a556148a2095b46498cda9e1950914b762"
+laxar-infrastructure@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/laxar-infrastructure/-/laxar-infrastructure-2.0.0.tgz#be7350bde99542caf712201e070702fa514ea358"
   dependencies:
     eslint "^3.0.1"
-    eslint-config-laxarjs "^0.3.0"
+    eslint-config-laxarjs "^2.0.0"
     jasmine-core "^2.5.2"
     karma "^1.5.0"
     karma-chrome-launcher "^2.0.0"
@@ -2568,9 +2572,9 @@ laxar-uikit@^2.0.0-rc.1:
     moment "^2.17.1"
     pkg-dir "^1.0.0"
 
-laxar@^2.0.0-rc.3:
-  version "2.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/laxar/-/laxar-2.0.0-rc.3.tgz#39d3388b4cfd0a432a11f58c858071b150f4a688"
+laxar@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/laxar/-/laxar-2.0.0.tgz#86f3f15b1b9f7a53c6d36518077b66f92dc74fee"
   dependencies:
     navigo "4.3.6"
 

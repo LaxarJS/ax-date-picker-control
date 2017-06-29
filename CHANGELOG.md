@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v2.0.0
+
 - [#9](https://github.com/LaxarJS/laxar-date-picker-control/issues/9): Renamed repo to `laxar-date-picker-control`
 - [#10](https://github.com/LaxarJS/laxar-date-picker-control/issues/10): Fixed processing of language tags: fixed the fix
 - [#6](https://github.com/LaxarJS/laxar-date-picker-control/issues/6): Fixed processing of language tags
